@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    
+    <OutputType>Exe</OutputType>
+	  <RootNamespace>Using_EPBotNET</RootNamespace>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extracting-information.vb" />
+    <Compile Remove="Hand-simulation.vb" />
+    <Compile Remove="Using_the_EPBot.vb" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <!-- Referencja do biblioteki EPBotNET jako assembly .NET (IL) -->
+    <Reference Include="EPBotNET">
+      <HintPath>EPBotNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Kopiuj DLL obok exe przy każdym buildzie -->
+  <ItemGroup>
+    <Content Include="EPBotNET.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
+
