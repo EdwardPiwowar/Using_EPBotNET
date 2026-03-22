@@ -3,20 +3,11 @@
   <PropertyGroup>
     
     <OutputType>Exe</OutputType>
-	  <RootNamespace>Using_EPBotNET</RootNamespace>
+	<RootNamespace>Using_EPBotNET</RootNamespace>
     <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Extracting-information.vb" />
-    <Compile Remove="Hand-simulation.vb" />
-    <Compile Remove="Using_the_EPBot.vb" />
-  </ItemGroup>
-
-
-
-  <ItemGroup>
-    <!-- Referencja do biblioteki EPBotNET jako assembly .NET (IL) -->
     <Reference Include="EPBotNET">
       <HintPath>EPBotNET.dll</HintPath>
     </Reference>
@@ -29,5 +20,22 @@
     </Content>
   </ItemGroup>
 
+	<ItemGroup>
+		<Compile Remove="Extracting-information.vb" />
+		<Compile Remove="Hand-simulation.vb" />
+		<Compile Remove="Program.vb" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Extracting-information.vb">
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+		</Compile>
+		<Compile Update="Hand-simulation.vb">
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+		</Compile>
+		<Compile Update="Program.vb">
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+		</Compile>
+	</ItemGroup>
+	
 </Project>
 
