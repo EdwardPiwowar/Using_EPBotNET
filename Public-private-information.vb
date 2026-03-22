@@ -5,10 +5,6 @@ Module Program
     Sub Main(args As String())
         Dim i As Long, j As Integer, k As Integer, n As Integer, asker As Integer, trump As Integer
         Dim str_hand As String, str_error As String
-        Dim arr_suits() As String
-        Dim arr_leads() As String
-        Dim arr_leaders() As Integer
-        Dim info() As Integer
         Dim info_min() As Integer
         Dim info_max() As Integer
         'Dim honors() As Integer
@@ -116,18 +112,7 @@ Module Program
                 Console.WriteLine("")
             Next n
             arr_suits = .get_arr_suits
-            Console.WriteLine("")
-            For i = C_SPADES To C_CLUBS Step -1
-                Console.WriteLine(vbTab + arr_suits(i))
-            Next i
-            Console.WriteLine("")
-            For i = C_SPADES To C_CLUBS Step -1
-                Console.WriteLine(arr_suits(12 + i) + vbTab + vbTab + arr_suits(4 + i))
-            Next i
-            Console.WriteLine("")
-            For i = C_SPADES To C_CLUBS Step -1
-                Console.WriteLine(vbTab + arr_suits(8 + i))
-            Next i
+            print_hand_diagram()
 
         End With
         Console.WriteLine("")

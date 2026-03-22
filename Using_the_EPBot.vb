@@ -2,10 +2,7 @@ Module Program
     Sub Main(args As String())
         Dim k As Integer, position As Integer, new_bid As Integer
         Dim str_hand As String, entered_hand As String, meaning As String
-        Dim arr_leads() As String
-        Dim arr_leaders() As Integer
-        Dim arr_suits() As String
-        Dim info() As Integer
+
         ReDim hand(3)
         ReDim arr_bids(127)
         ReDim arr_leads(63)
@@ -91,19 +88,7 @@ Module Program
                 new_bid = .get_bid
                 ''obtain all hands
                 arr_suits = .get_arr_suits()
-                Console.WriteLine("")
-                For i = C_SPADES To C_CLUBS Step -1
-                    Console.WriteLine(vbTab + arr_suits(i))
-                Next i
-                Console.WriteLine("")
-                For i = C_SPADES To C_CLUBS Step -1
-                    Console.WriteLine(arr_suits(12 + i) + vbTab + vbTab + arr_suits(4 + i))
-                Next i
-                Console.WriteLine("")
-                For i = C_SPADES To C_CLUBS Step -1
-                    Console.WriteLine(vbTab + arr_suits(8 + i))
-                Next i
-                Console.WriteLine("")
+                print_hand_diagram()
             End With
         Next k
 

@@ -34,6 +34,11 @@ Module ModuleBBA
     Public dealers(0 To 15) As Integer
     Public vulnerability(15) As Integer
     Public strain_mark(5) As String
+    Public arr_bids() As String
+    Public arr_leads() As String
+    Public arr_leaders() As Integer
+    Public arr_suits() As String
+    Public info() As Integer
     Private lbloki(3) As Integer
     ''EPBotNET is the namespace of the .NET (IL) library
     Public Player(3) As EPBotNET.EPBot
@@ -210,4 +215,21 @@ Module ModuleBBA
         Next j
         bidding_body = str_bidding
     End Function
+    Public Sub print_hand_diagram()
+        Dim i As Integer
+        Console.WriteLine("")
+        For i = C_SPADES To C_CLUBS Step -1
+            Console.WriteLine(vbTab + arr_suits(i))
+        Next i
+        Console.WriteLine("")
+        For i = C_SPADES To C_CLUBS Step -1
+            Console.WriteLine(arr_suits(12 + i) + vbTab + vbTab + arr_suits(4 + i))
+        Next i
+        Console.WriteLine("")
+        For i = C_SPADES To C_CLUBS Step -1
+            Console.WriteLine(vbTab + arr_suits(8 + i))
+        Next i
+        Console.WriteLine("")
+    End Sub
+
 End Module

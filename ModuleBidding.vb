@@ -2,7 +2,7 @@ Imports System.Numerics
 
 Module ModuleBidding
     Public current_double As Integer, current_bid As Integer, leader As Integer, dummy As Integer, declarer As Integer, initial_pauses As Integer
-    Public arr_bids() As String
+
     Public Sub bid()
         Dim meaning As String
         Dim k As Integer, passes As Integer, position As Integer, bid_number As Integer, new_bid As Integer, side As Integer, strain As Integer
